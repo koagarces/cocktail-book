@@ -5,6 +5,7 @@ const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
 
   const handleClick = (page) => {
     setCurrentPage(page);
+    console.log(page);
   };
 
   for (let i = 1; i < totalPages + 1; i++) {

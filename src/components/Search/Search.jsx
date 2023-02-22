@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { getCocktailByName } from "../services/cocktailData";
-import Pagination from "./Pagenation";
+import { getCocktailByName } from "../../services/cocktailData";
+import Pagination from "../Pagenation/Pagenation";
 const Search = () => {
   const [searchBar, setSearchBar] = useState("");
   const [cocktails, setCocktails] = useState([]);
@@ -45,6 +45,13 @@ const Search = () => {
       />
       <input type="submit" value="Submit" />
       <div>
+        <Pagination
+          totalPages={totalPages}
+          head={head}
+          tail={tail}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
         <ul>
           {onePage.map((cocktail) => (
             <div>
